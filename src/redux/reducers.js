@@ -1,10 +1,13 @@
-import { ADD_EVENT } from "./actions";
+import { ADD_EVENT, RESET_STATE } from "./actions";
 
-export default (state = [], action) => {
+const initialState = [];
+
+export default (state = initialState, action) => {
   switch (action.type) {
     case ADD_EVENT:
-      console.log(state);
       return [...state, action.payload];
+    case RESET_STATE:
+      return initialState;
     default:
       return state;
   }

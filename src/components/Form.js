@@ -18,6 +18,12 @@ class Form extends Component {
   onSubmitHandler = event => {
     event.preventDefault();
     this.props.addNewEvent(this.state);
+    this.props.showModal(false);
+    this.setState({
+      date: "",
+      title: "",
+      notes: ""
+    });
   };
 
   render() {

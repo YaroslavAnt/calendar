@@ -4,3 +4,9 @@ export const addEvent = eventObj => ({
   type: ADD_EVENT,
   payload: eventObj
 });
+
+export const RESET_STATE = "RESET_STATE";
+
+export const resetState = () => ({
+  type: RESET_STATE
+});

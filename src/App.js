@@ -4,8 +4,15 @@ import { createStore } from "redux";
 
 import Calendar from "./components/Calendar";
 import reducers from "./redux/reducers";
+import { loadState, saveState } from "./redux/localStorage";
 
-const store = createStore(reducers);
+const persistedStore = loadState();
+
+const store = createStore(reducers, persistedStore);
+
+store.subscribe(() => {
+  saveState(store.getState());
+});
 
 class App extends Component {
   render() {

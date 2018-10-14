@@ -9,7 +9,8 @@ import Form from "./Form";
 class Calendar extends React.Component {
   state = {
     month: moment(),
-    selected: moment().startOf("day")
+    selected: moment().startOf("day"),
+    isModalActive: false
   };
 
   previous = () => {
@@ -33,21 +34,32 @@ class Calendar extends React.Component {
     });
   };
 
+  showModal = bool => {
+    this.setState({
+      isModalActive: bool
+    });
+  };
+
+  resetDay = () => {
+    this.setState({
+      month: moment(),
+      selected: moment().startOf("day")
+    });
+  };
+
   render() {
     return (
       <section className="calendar">
-        <Modal
-          show
-          // show={this.props.showModal}
-          // modalClosed={this.purchaseCancellHandler}
-        >
+        <Modal show={this.state.isModalActive}>
           <h1>Add Event</h1>
-          <Form />
+          <Form showModal={this.showModal} />
         </Modal>
         <Header
           prev={this.previous}
           next={this.next}
           month={this.state.month}
+          showModal={this.showModal}
+          resetDay={this.resetDay}
         />
         <Weeks
           month={this.state.month}

@@ -5,9 +5,9 @@ import Day from "./Day";
 class Week extends React.Component {
   render() {
     let days = [];
-    let { date, count } = this.props;
+    let { date } = this.props;
 
-    const { month, selected, select } = this.props;
+    const { month, selected, select, count } = this.props;
 
     for (var i = 0; i < 7; i++) {
       let day = {
@@ -20,6 +20,8 @@ class Week extends React.Component {
       days.push(
         <Day
           day={day}
+          month={date.month()}
+          year={date.year()}
           key={i}
           selected={selected}
           count={count}

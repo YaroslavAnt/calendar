@@ -118,11 +118,23 @@ header input[type = text] {
     border-left: solid 1px #aaa;
     cursor: pointer;
     transition: all .2s;
+    overflow: hidden;
 }
-.day p {
+.text-small {
     margin: 0.3vw;
     font-size: 2vw
 }
+
+.text-smaller {
+    margin: 0.2vw;
+    font-size: 1.5vw
+}
+
+.text-xs {
+    margin: 0.1vw 1vw;
+    font-size: 1vw
+}
+
 .day:hover {
     background: #ccc;
 }
