@@ -11,9 +11,7 @@ class Day extends React.Component {
       selected,
       events
     } = this.props;
-    console.log(date.isSame("2018-10-13"));
-    console.log(events);
-
+    
     return (
       <div
         key={date.toString()}

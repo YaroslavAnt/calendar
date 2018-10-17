@@ -27,6 +27,7 @@ class Form extends Component {
   };
 
   render() {
+    const { date, title, notes } = this.state;
     return (
       <form
         action="submit"
@@ -40,7 +41,7 @@ class Form extends Component {
             id="date"
             name="date"
             onChange={this.onChangeHandler}
-            value={this.state.date}
+            value={date}
           />
         </div>
 
@@ -51,7 +52,7 @@ class Form extends Component {
             id="title"
             name="title"
             onChange={this.onChangeHandler}
-            value={this.state.title}
+            value={title}
           />
         </div>
 
@@ -61,7 +62,7 @@ class Form extends Component {
             id="notes"
             name="notes"
             onChange={this.onChangeHandler}
-            value={this.state.notes}
+            value={notes}
           />
         </div>
 
@@ -69,6 +70,7 @@ class Form extends Component {
           type="submit"
           className="submit flex-column-item"
           value="Submit"
+          disabled={!date || !title || !notes}
         />
       </form>
     );

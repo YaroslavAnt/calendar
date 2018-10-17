@@ -1,12 +1,14 @@
-import React from "react";
+import React, { Component } from "react";
 import moment from "moment";
+import { connect } from "react-redux";
 
 import Weeks from "./Weeks";
 import Header from "./Header";
 import Modal from "./Modal";
 import Form from "./Form";
+import { resetState } from "../redux/actions";
 
-class Calendar extends React.Component {
+class Calendar extends Component {
   state = {
     month: moment(),
     selected: moment().startOf("day"),
@@ -50,7 +52,7 @@ class Calendar extends React.Component {
   render() {
     return (
       <section className="calendar">
-        <Modal show={this.state.isModalActive}>
+        <Modal show={this.state.isModalActive} showModal={this.showModal}>
           <h1>Add Event</h1>
           <Form showModal={this.showModal} />
         </Modal>
@@ -60,6 +62,7 @@ class Calendar extends React.Component {
           month={this.state.month}
           showModal={this.showModal}
           resetDay={this.resetDay}
+          cleanCalendar={this.props.resetOldState}
         />
         <Weeks
           month={this.state.month}
@@ -71,4 +74,21 @@ class Calendar extends React.Component {
   }
 }
 
-export default Calendar;
+const MapStateToProps = state => {
+  return {};
+};
+
+const MapDispatchToProps = dispatch => {
+  return {
+    resetOldState: () => {
+      dispatch(resetState());
+    }
+  };
+};
+
+export default connect(
+  MapStateToProps,
+  MapDispatchToProps
+)(Calendar);
+
+//export default Calendar;

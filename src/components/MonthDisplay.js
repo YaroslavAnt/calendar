@@ -2,6 +2,7 @@ import React from "react";
 
 const monthDisplay = props => {
   const month = props.month;
+  console.log(month);
   return (
     <div className="month-display">
       <i className="arrow fa fa-angle-left" onClick={props.prev} />
