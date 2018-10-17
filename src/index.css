@@ -1,13 +1,4 @@
-/* //variables & mixins
-@white: #FFFFFF;
-@ltGrey: #EFEFEF;
-@mdGrey: #C0C0C0;
-@dkGrey: #CCCCCC;
-@secondary:#2875C7;
-@dkSecondary: darken(@secondary,10%);
-@ltSecondary: lighten(@secondary,45%);
-@borderColor: @dkGrey;
-@background: @white; */
+
 
 .vertical-center {
   display: flex;
@@ -37,6 +28,7 @@ body {
   box-shadow: 0 0 15px 0 #ccc;
   font-size: 1.3rem;
 }
+
 .calendar header {
   display: flex;
   align-items: center;;
@@ -47,18 +39,20 @@ body {
   text-transform: uppercase;
   user-select: none;
 }        
+
 .month-display {
   align-items: center;
   display: inline-block;
   flex: 1;
 }
+
 input, textarea {
     margin: 1vw;
     border-radius: 0.5vw;
     padding: 0.5vw;
 }
 
-header input {    
+.header>input {    
     width: 10%;
 }
 
@@ -70,11 +64,12 @@ header .search {
     padding: 0.5vw;
 }
 
-header input[type = text] {
+.search> input[type = text] {
     border-style: none;
     padding: 0 0.5vw;
     margin: 0;
     flex: 1;
+    background: transparent;
 }
 
 header ul {
@@ -82,7 +77,8 @@ header ul {
     margin: 3vw 0;
     width: 100%;    
     list-style: none;
-    padding-inline-start: 0
+    padding-inline-start: 0;
+    width: auto;
 }
 
 header ul li {
@@ -124,6 +120,7 @@ header ul li:hover {
 .week {
     border-top: solid 1px #aaa;
 }
+
 .week:first-child {
     border-top: none;
 }
@@ -194,26 +191,17 @@ header ul li:hover {
     left: 35%;
     top: 20%;
     box-sizing: border-box;
-    transition: all 0.3s ease-out;
-    
+    transition: all 0.3s ease-out;    
   }
   
 .flex-column {
     display: flex;
     flex-direction: column;
-
 }
 
 .flex-column-item {
     margin-top: 2vw;
 }
-
-/* @media (min-width: 600px) {
-    .modal {
-        width: 500px;
-        left: calc(50% - 250px);
-    }
-} */
 
 .backdrop {
     width: 100%;

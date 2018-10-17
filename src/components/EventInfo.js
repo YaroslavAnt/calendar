@@ -1,12 +1,23 @@
-import React from "react";
+import React, { Component } from "react";
+import Form from "./Form";
 
-const eventInfo = props => (
-  <div className="flex-column">
-    <h1>Event Info</h1>
-    <p>Date: {props.el.date}</p>
-    <p>Title: {props.el.title}</p>
-    <p>Notes: {props.el.notes}</p>
-  </div>
-);
+class EventInfo extends Component {
+  render() {
+    return (
+      <div className="flex-column">
+        <h1>Event Info</h1>
+        <p>Date: {this.props.el.date}</p>
+        <p>Title: {this.props.el.title}</p>
+        <p>Notes: {this.props.el.notes}</p>
+        <input
+          type="button"
+          onClick={() => this.props.showEdit(true)}
+          value="Edit"
+          className="mainBG"
+        />
+      </div>
+    );
+  }
+}
 
-export default eventInfo;
+export default EventInfo;
