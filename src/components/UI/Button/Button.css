@@ -3,10 +3,11 @@
   border-radius: 0.5vw;
   padding: 0.5vw;
   flex: 1;
+  border: none;
 }
 
 .mainColor {
-  background: rgb(46, 172, 63);
+  background:#006eca;
   color: #fff;
 }
 

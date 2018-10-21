@@ -32,7 +32,11 @@ class Day extends React.Component {
             date.isSame(event.date) && (
               <div className="event" key={index}>
                 <p className="mainBG text-smaller">{event.title}</p>
-                <p className="text-xs">{event.notes}</p>
+                <ul className="text-xs">
+                  <li>
+                    <span>{event.notes}</span>
+                  </li>
+                </ul>
               </div>
             )
           );

@@ -8,17 +8,17 @@ import Button from "../UI/Button/Button";
 const header = props => {
   return (
     <header className="header">
-      <Button onClick={props.resetDay} value="Today" btnType="button" />
+      <Button onClick={props.resetDay} value="СЕГОДНЯ" btnType="button" />
       <MonthDisplay month={props.month} prev={props.prev} next={props.next} />
       <Button
         onClick={() => props.showModal(true)}
-        value="Add"
+        value="Добавить"
         btnColor="mainColor"
         btnType="button"
       />
       <Button
         onClick={props.cleanCalendar}
-        value="Refresh"
+        value="Обновить"
         btnColor="mainColor"
         btnType="button"
       />

@@ -11,7 +11,7 @@ const weeks = props => {
     .clone()
     .startOf("month")
     .add("w" - 1)
-    .day("Monday");
+    .day("понедельник");
   let count = 0;
   let monthIndex = date.month();
 

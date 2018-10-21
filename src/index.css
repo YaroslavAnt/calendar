@@ -1,8 +1,3 @@
-/* .vertical-center {
-  display: flex;
-  justify-content:center;
-  align-items: center;
-} */
 
 html {
   font-size: 62.5%;
@@ -18,7 +13,7 @@ body {
 }
 
 .mainBG {
-    background: rgb(69, 46, 172);
+    background: #039be5;
     color: #fff;
 }
 

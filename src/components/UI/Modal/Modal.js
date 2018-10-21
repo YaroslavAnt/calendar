@@ -1,12 +1,12 @@
 import React from "react";
 
 import "./Modal.css";
-import Aux from "../../Aux";
+import Wrapper from "../../Wrapper";
 import Backdrop from "../Backdrop/Backdrop";
 
 const Modal = props => {
   return (
-    <Aux>
+    <Wrapper>
       <Backdrop show={props.show} clicked={() => props.showModal(false)} />
       <div
         className="modal"
@@ -17,7 +17,7 @@ const Modal = props => {
       >
         {props.children}
       </div>
-    </Aux>
+    </Wrapper>
   );
 };
 

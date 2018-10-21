@@ -6,7 +6,7 @@ import Modal from "../../components/UI/Modal/Modal";
 import EventInfo from "../../components/Header/EventInfo";
 import FormEdit from "../FormEdit/FormEdit";
 import SearchList from "../../components/Header/SearchList/SearchList";
-import Aux from "../../components/Aux";
+import Wrapper from "../../components/Wrapper";
 
 class SearchEvent extends Component {
   state = {
@@ -57,10 +57,10 @@ class SearchEvent extends Component {
         />
         <Modal show={isModalActive} showModal={this.showModal}>
           {showEdit ? (
-            <Aux>
+            <Wrapper>
               <h1>Edit Event</h1>
               <FormEdit clickedItem={clickedItem} showModal={this.showModal} />
-            </Aux>
+            </Wrapper>
           ) : (
             <EventInfo el={clickedItem} showEdit={this.showEdit} />
           )}

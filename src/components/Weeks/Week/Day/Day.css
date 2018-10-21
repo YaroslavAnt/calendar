@@ -2,7 +2,7 @@
   display: flex;    
   flex: 1;
   flex-direction: column;
-  height: 9vw;
+  height: 12vw;
   border-left: solid 1px #aaa;
   cursor: pointer;
   transition: all .2s;
@@ -10,7 +10,7 @@
 }
 
 .day:hover {
-  background: #ccc;
+  background: #eee;
 }
 
 .day:first-child {
@@ -18,11 +18,11 @@
 }
 
 .day.today {
-  background: #ccc;
+  background: #eee;
 }
 
 .day.today> p{
-  background: rgb(69, 46, 172);
+  background:#006eca;
   color: #fff;
   border-radius: 50%;
   display: block;
@@ -36,7 +36,24 @@
 }
 
 .day.selected{
-  background-color: #aaa
+  background-color: #ddd
+}
+
+.day ul{
+  padding-inline-start: 0;
+  color: #006eca;
+  list-style-type: none
+}
+
+.day li span{
+  color: #000
+}
+
+.day li:before {
+  content:"·";
+  font-size:10vw;
+  vertical-align:middle;
+  line-height:20px;
 }
 
 .text-small {
@@ -50,6 +67,6 @@
 }
 
 .text-xs {
-  margin: 0.1vw 1vw;
+  margin: 0.1vw;
   font-size: 1vw
 }

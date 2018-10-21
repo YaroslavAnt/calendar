@@ -76,6 +76,7 @@ class FormEdit extends Component {
 
         <Button
           btnType="submit"
+          btnColor="mainColor"
           styles="flex-column-item"
           value="Submit"
           disabled={!date || !title || !notes}
