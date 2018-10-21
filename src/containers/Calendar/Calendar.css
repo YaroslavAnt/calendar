@@ -1,0 +1,9 @@
+.calendar {
+  display: block;
+  background: #fff;
+  width: 90%;
+  border: solid 1px #aaa;
+  margin: 10px auto;
+  box-shadow: 0 0 15px 0 #ccc;
+  font-size: 1.3rem;
+}

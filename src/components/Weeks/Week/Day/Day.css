@@ -1,0 +1,55 @@
+.day {
+  display: flex;    
+  flex: 1;
+  flex-direction: column;
+  height: 9vw;
+  border-left: solid 1px #aaa;
+  cursor: pointer;
+  transition: all .2s;
+  overflow: hidden;
+}
+
+.day:hover {
+  background: #ccc;
+}
+
+.day:first-child {
+  border-left:none;
+}
+
+.day.today {
+  background: #ccc;
+}
+
+.day.today> p{
+  background: rgb(69, 46, 172);
+  color: #fff;
+  border-radius: 50%;
+  display: block;
+  width: 2.5vw;
+  height: 2.5vw;
+  text-align: center;
+}
+
+.day.different-month {
+  color: #ccc;
+}
+
+.day.selected{
+  background-color: #aaa
+}
+
+.text-small {
+  margin: 0.3vw;
+  font-size: 2vw
+}
+
+.text-smaller {
+  margin: 0.2vw;
+  font-size: 1.5vw
+}
+
+.text-xs {
+  margin: 0.1vw 1vw;
+  font-size: 1vw
+}

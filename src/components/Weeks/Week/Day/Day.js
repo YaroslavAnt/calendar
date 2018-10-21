@@ -1,4 +1,6 @@
 import React from "react";
+import "./Day.css";
+
 import { connect } from "react-redux";
 
 class Day extends React.Component {
@@ -11,13 +13,13 @@ class Day extends React.Component {
       selected,
       events
     } = this.props;
-    
+
     return (
       <div
         key={date.toString()}
         className={
           "day" +
-          (isToday ? " today mainBG" : "") +
+          (isToday ? " today" : "") +
           (isCurrentMonth ? "" : " different-month") +
           (date.isSame(selected) ? " selected" : "")
         }

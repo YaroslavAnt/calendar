@@ -2,11 +2,12 @@ import React, { Component } from "react";
 import moment from "moment";
 import { connect } from "react-redux";
 
-import Weeks from "./Weeks";
-import Header from "./Header";
-import Modal from "./Modal";
-import Form from "./Form";
-import { resetState } from "../redux/actions";
+import "./Calendar.css";
+import Weeks from "../../components/Weeks/Weeks";
+import Header from "../../components/Header/Header";
+import Modal from "../../components/UI/Modal/Modal";
+import { resetState } from "../../redux/actions";
+import FormEdit from "../FormEdit/FormEdit";
 
 class Calendar extends Component {
   state = {
@@ -54,7 +55,7 @@ class Calendar extends Component {
       <section className="calendar">
         <Modal show={this.state.isModalActive} showModal={this.showModal}>
           <h1>Add Event</h1>
-          <Form showModal={this.showModal} />
+          <FormEdit showModal={this.showModal} />
         </Modal>
         <Header
           prev={this.previous}

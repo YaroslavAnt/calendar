@@ -1,0 +1,14 @@
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-column-item {
+  margin-top: 2vw;
+}
+
+input, textarea {
+  margin: 1vw;
+  border-radius: 0.5vw;
+  padding: 0.5vw;
+}

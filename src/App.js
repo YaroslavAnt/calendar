@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Provider } from "react-redux";
 import { createStore } from "redux";
 
-import Calendar from "./components/Calendar";
+import Calendar from "./containers/Calendar/Calendar";
 import reducers from "./redux/reducers";
 import { loadState, saveState } from "./redux/localStorage";
 

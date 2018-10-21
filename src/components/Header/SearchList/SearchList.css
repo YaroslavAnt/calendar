@@ -1,0 +1,27 @@
+.search> input[type = text] {
+  border-style: none;
+  padding: 0 0.5vw;
+  margin: 0;
+  flex: 1;
+  background: transparent;
+}
+
+header ul {
+  position: absolute;
+  margin: 3vw 0;
+  width: 100%;    
+  list-style: none;
+  padding-inline-start: 0;
+  width: auto;
+}
+
+header ul li {
+  padding: 0.5vw;
+  border: #aaa solid 1px;
+}
+
+header ul li:hover {
+  padding: 0.7vw;
+  background-color: rgb(5, 119, 43);
+  cursor: pointer;
+}

@@ -1,6 +1,6 @@
 import React from "react";
 
-import Week from "./Week";
+import Week from "./Week/Week";
 
 const weeks = props => {
   const { selected, month, select } = props;

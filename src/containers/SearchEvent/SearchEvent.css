@@ -1,0 +1,7 @@
+.search {
+  width: 20%;
+  border: #777 solid 1px;
+  display: flex;
+  margin: 1vw;
+  padding: 0.5vw;
+}

@@ -1,12 +1,16 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { replaceItem } from "../redux/actions";
+import { replaceItem } from "../../redux/actions";
+import { addEvent } from "../../redux/actions";
 
-class Form extends Component {
+import "./FormEdit.css";
+import Button from "../../components/UI/Button/Button";
+
+class FormEdit extends Component {
   state = {
-    date: this.props.clickedItem.date,
-    title: this.props.clickedItem.title,
-    notes: this.props.clickedItem.notes
+    date: this.props.clickedItem ? this.props.clickedItem.date : "",
+    title: this.props.clickedItem ? this.props.clickedItem.title : "",
+    notes: this.props.clickedItem ? this.props.clickedItem.notes : ""
   };
 
   onChangeHandler = event => {
@@ -18,7 +22,9 @@ class Form extends Component {
   onSubmitHandler = event => {
     event.preventDefault();
     const { clickedItem } = this.props;
-    this.props.editEvent(clickedItem, this.state);
+    clickedItem
+      ? this.props.editEvent(clickedItem, this.state)
+      : this.props.addNewEvent(this.state);
     this.props.showModal(false);
     this.setState({
       date: "",
@@ -68,9 +74,9 @@ class Form extends Component {
           />
         </div>
 
-        <input
-          type="submit"
-          className="submit flex-column-item"
+        <Button
+          btnType="submit"
+          styles="flex-column-item"
           value="Submit"
           disabled={!date || !title || !notes}
         />
@@ -87,6 +93,9 @@ const MapDispatchToProps = dispatch => {
   return {
     editEvent: (oldEvent, newEvent) => {
       dispatch(replaceItem(oldEvent, newEvent));
+    },
+    addNewEvent: eventObj => {
+      dispatch(addEvent(eventObj));
     }
   };
 };
@@ -94,4 +103,4 @@ const MapDispatchToProps = dispatch => {
 export default connect(
   MapStateToProps,
   MapDispatchToProps
-)(Form);
+)(FormEdit);
