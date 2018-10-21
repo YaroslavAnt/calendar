@@ -23,11 +23,6 @@ const Search = props => {
                     .sort()
                     .join("")
                 )) && (
-              //  ===
-              // inputValue
-              //   .split(/[^0-9]/)
-              //   .sort()
-              //   .join("")
               <li key={JSON.stringify(el)} onClick={() => onClickHandler(el)}>
                 <p>Date: {el.date}</p>
                 <p>Title: {el.title}</p>
